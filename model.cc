@@ -508,6 +508,10 @@ void ModelChecker::run()
 			t = execution->take_step(curr);
 		} while (!should_terminate_execution());
 
+		if (stats.num_total && (stats.num_total % 10000) == 0) {
+			model_print("\n================== Iteration %d ==================\n\n", stats.num_total);
+		}
+
 		has_next = next_execution();
 		if (inspect_plugin != NULL && !has_next) {
 			inspect_plugin->actionAtModelCheckingFinish();

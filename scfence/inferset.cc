@@ -53,7 +53,7 @@ bool InferenceSet::addCandidates(Inference *curInfer, InferenceList *inferList) 
 
 	// For the purpose of debugging, record all those inferences added here
 	InferenceList *addedCandidates = new InferenceList;
-	FENCE_PRINT("List size: %ld.\n", cands->size());
+	FENCE_PRINT("List size: %zu.\n", cands->size());
 	bool added = false;
 
 	/******** addCurInference ********/

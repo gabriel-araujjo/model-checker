@@ -1584,6 +1584,8 @@ bool ModelExecution::r_modification_order(ModelAction *curr, const rf_type *rf)
 	if (curr->is_seqcst())
 		last_sc_write = get_last_seq_cst_write(curr);
 
+	(void) last_sc_write; // silent variable ‘last_sc_write’ set but not used warning
+
 	/* Iterate over all threads */
 	for (i = 0; i < thrd_lists->size(); i++) {
 		/* Last SC fence in thread i */

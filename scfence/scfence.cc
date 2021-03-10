@@ -726,7 +726,7 @@ InferenceList* SCFence::getFixesFromPatternA(action_list_t *list, action_list_t:
 	} while (findIt != readIter);
 					
 	// Found all the possible write2s
-	FENCE_PRINT("write2s set size: %ld\n", write2s->size());
+	FENCE_PRINT("write2s set size: %zu\n", write2s->size());
 	for (action_list_t::iterator itWrite2 = write2s->begin();
 		itWrite2 != write2s->end(); itWrite2++) {
 		InferenceList *tmpCandidates = new InferenceList;
@@ -1273,7 +1273,7 @@ void SCFence::print_rf_sb_paths(paths_t *paths, const ModelAction *start, const 
 	for (paths_t::iterator paths_i = paths->begin(); paths_i !=
 		paths->end(); paths_i++) {
 		path_t *path = *paths_i;
-		FENCE_PRINT("Path %ld, size (%ld):\n", distance(paths->begin(), paths_i),
+		FENCE_PRINT("Path %zu, size (%zu):\n", distance(paths->begin(), paths_i),
 			path->size());
 		path_t::iterator it = path->begin(), i_next;
 		for (; it != path->end(); it++) {
